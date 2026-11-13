@@ -1,0 +1,479 @@
+source_table,source_column,snake_case_name,workbook_type,proposed_silver_type,confidence,reason,is_pii
+API_ACD_ALL,DATE,date,VARCHAR(16777216),DATE,HIGH,calendar date (text in export; YYYY-MM-DD),N
+API_ACD_ALL,DATE AND HOUR,date_and_hour,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_ACD_ALL,DAY OF WEEK,day_of_week,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_ACD_ALL,MONTH,month,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_ACD_ALL,TIME INTERVAL,time_interval,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_ACD_ALL,DISPOSITION,disposition,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_ACD_ALL,DISPOSITION GROUP A,disposition_group_a,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_ACD_ALL,DISPOSITION GROUP B,disposition_group_b,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_ACD_ALL,DISPOSITION GROUP C,disposition_group_c,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_ACD_ALL,DISPOSITION PATH,disposition_path,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_ACD_ALL,SKILL,skill,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_ACD_ALL,SOA MIN/THRESHOLD (SEC),soa_min_threshold_sec,VARCHAR(16777216),"NUMBER(6,0)",HIGH,threshold seconds,N
+API_ACD_ALL,CALL SURVEY RESULT,call_survey_result,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_ACD_ALL,CALL TYPE,call_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_ACD_ALL,CAMPAIGN,campaign,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_ACD_ALL,CAMPAIGN TYPE,campaign_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_ACD_ALL,MEDIA TYPE,media_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_ACD_ALL,PARKS,parks,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_ACD_ALL,AGENT,agent,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,REVIEW
+API_ACD_ALL,AGENT EMAIL,agent_email,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_ACD_ALL,AGENT FIRST NAME,agent_first_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_ACD_ALL,AGENT GROUP,agent_group,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_ACD_ALL,AGENT LAST NAME,agent_last_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_ACD_ALL,AGENT NAME,agent_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_ACD_ALL,FILE_NAME,five9_file_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_ACD_ALL,LOAD_TIMESTAMP,five9_load_timestamp,VARCHAR(16777216),TIMESTAMP_NTZ(0),HIGH,Five9 load timestamp text,N
+API_ACD_ALL,CALL ID,call_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_ACD_ALL,PARK TIME,park_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,YEAR,year,VARCHAR(16777216),"NUMBER(4,0)",HIGH,calendar or time-of-day label (text in export),N
+API_ACD_ALL,ABANDONED,abandoned,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_ACD_ALL,CONSULTS,consults,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_ACD_ALL,RING TIME,ring_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,TIME,time,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_ACD_ALL,QUEUE WAIT TIME,queue_wait_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,QUEUE CALLBACK PROCESSING,queue_callback_processing,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_ACD_ALL,CONSULTS ANSWERED,consults_answered,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_ACD_ALL,TALK TIME LESS HOLD AND PARK,talk_time_less_hold_and_park,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,CONFERENCES,conferences,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_ACD_ALL,HOLD TIME,hold_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,VOICEMAILS DECLINED,voicemails_declined,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_ACD_ALL,IVR TIME,ivr_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,QUARTER HOUR,quarter_hour,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_ACD_ALL,HOUR,hour,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_ACD_ALL,AFTER CALL WORK TIME,after_call_work_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,TALK TIME,talk_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,QUEUE CALLBACK WAIT TIME,queue_callback_wait_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,TOTAL QUEUE TIME,total_queue_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,HANDLE TIME,handle_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,CONSULT TIME,consult_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,SPEED OF ANSWER,speed_of_answer,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,VOICE IVR,voice_ivr,VARCHAR(16777216),"NUMBER(10,0)",MEDIUM,count (text in workbook),N
+API_ACD_ALL,CONFERENCE TIME,conference_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,HOLDS,holds,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_ACD_ALL,TIMESTAMP,timestamp,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; UTC assumed,N
+API_ACD_ALL,VISUAL IVR,visual_ivr,VARCHAR(16777216),"NUMBER(10,0)",MEDIUM,count (text in workbook),N
+API_ACD_ALL,TRANSFERS,transfers,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_ACD_ALL,VOICEMAILS HANDLED,voicemails_handled,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_ACD_ALL,HALF HOUR,half_hour,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_ACD_ALL,VOICEMAILS DELETED,voicemails_deleted,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_ACD_ALL,DAY OF MONTH,day_of_month,VARCHAR(16777216),"NUMBER(2,0)",HIGH,calendar or time-of-day label (text in export),N
+API_ACD_ALL,FIRST CALL RESOLUTION,first_call_resolution,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_ACD_ALL,QUEUE OVERFLOW,queue_overflow,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_ACD_ALL,QUEUE CALLBACK REGISTERED,queue_callback_registered,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_ACD_ALL,TIME TO ABANDON,time_to_abandon,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_ACD_ALL,HOUR OF DAY,hour_of_day,VARCHAR(16777216),"NUMBER(2,0)",HIGH,calendar or time-of-day label (text in export),N
+API_ACD_ALL,VOICEMAILS,voicemails,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_ACD_ALL,TIMESTAMP MILLISECOND,timestamp_millisecond,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; UTC assumed,N
+API_ACD_ALL,SERVICE LEVEL,service_level,VARCHAR(16777216),"NUMBER(6,1)",HIGH,percent (ACD) or 0/1 per call,N
+API_ACD_ALL,VOICEMAILS TRANSFERRED,voicemails_transferred,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_ACD_ALL,VOICEMAILS RETURNED CALL,voicemails_returned_call,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_ACD_ALL,CALLS,calls,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_ACD_ALL,EXTENSION,extension,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,DATE,date,VARCHAR(16777216),DATE,HIGH,calendar date (text in export; YYYY-MM-DD),N
+API_CALLLOG,DATE AND HOUR,date_and_hour,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_CALLLOG,DAY OF WEEK,day_of_week,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_CALLLOG,MONTH,month,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_CALLLOG,TIME INTERVAL,time_interval,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_CALLLOG,ABANDON RATE,abandon_rate,VARCHAR(16777216),"NUMBER(6,2)",MEDIUM,percent; unit not confirmed,N
+API_CALLLOG,ANI,ani,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,Y
+API_CALLLOG,ANI COUNTRY,ani_country,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,ANI STATE,ani_state,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_CALLLOG,CALL SURVEY RESULT,call_survey_result,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,CALL TYPE,call_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,CAMPAIGN,campaign,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,CAMPAIGN TYPE,campaign_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,CUSTOMER NAME,customer_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALLLOG,DIAL RESULT,dial_result,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,DISPOSITION,disposition,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,DISPOSITION GROUP A,disposition_group_a,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,DISPOSITION GROUP B,disposition_group_b,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,DISPOSITION GROUP C,disposition_group_c,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,DISPOSITION PATH,disposition_path,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,DNIS COUNTRY,dnis_country,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,DNIS STATE,dnis_state,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,IVR PATH,ivr_path,VARCHAR(16777216),VARCHAR(256),MEDIUM,free text; values not confirmed,N
+API_CALLLOG,LIST NAME,list_name,VARCHAR(16777216),VARCHAR(512),MEDIUM,free text or identifier; values not confirmed,REVIEW
+API_CALLLOG,NOTES,notes,VARCHAR(16777216),VARCHAR(512),MEDIUM,free text or identifier; values not confirmed,REVIEW
+API_CALLLOG,PARENT SESSION ID,parent_session_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALLLOG,RECORDINGS,recordings,VARCHAR(16777216),VARCHAR(512),MEDIUM,free text or identifier; values not confirmed,N
+API_CALLLOG,SESSION ID,session_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALLLOG,SIP REFER,sip_refer,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALLLOG,SIP REFER DESTINATION,sip_refer_destination,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,SIP REFER SOURCE,sip_refer_source,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,SKILL,skill,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,SOA MIN/THRESHOLD (SEC),soa_min_threshold_sec,VARCHAR(16777216),"NUMBER(6,0)",HIGH,threshold seconds,N
+API_CALLLOG,PARKS,parks,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,PREVIEW INTERRUPTED,preview_interrupted,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALLLOG,PREVIEW INTERRUPTED BY CALL,preview_interrupted_by_call,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALLLOG,PREVIEW INTERRUPTED BY SKILL VM,preview_interrupted_by_skill_vm,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALLLOG,PREVIEW TIME,preview_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,VIDEO TIME,video_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,AGENT,agent,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,REVIEW
+API_CALLLOG,AGENT EMAIL,agent_email,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALLLOG,AGENT FIRST NAME,agent_first_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALLLOG,AGENT GROUP,agent_group,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,AGENT LAST NAME,agent_last_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALLLOG,AGENT NAME,agent_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_CALLLOG,DEST AGENT,dest_agent,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,REVIEW
+API_CALLLOG,DEST AGENT EMAIL,dest_agent_email,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_CALLLOG,DEST AGENT FIRST NAME,dest_agent_first_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_CALLLOG,DEST AGENT GROUP,dest_agent_group,VARCHAR(16777216),VARCHAR(256),MEDIUM,text dimension,N
+API_CALLLOG,DEST AGENT LAST NAME,dest_agent_last_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_CALLLOG,DEST AGENT NAME,dest_agent_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_CALLLOG,CITY,city,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALLLOG,COMPANY,company,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_CALLLOG,EMAIL,email,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALLLOG,FIRST_NAME,first_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALLLOG,LANGUAGE SELECT,language_select,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,LAST_NAME,last_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALLLOG,LASTAGENT,lastagent,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,REVIEW
+API_CALLLOG,LASTCAMPAIGN,lastcampaign,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,LASTDISPOSITION,lastdisposition,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,NUMBER2,number2,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,REVIEW
+API_CALLLOG,NUMBER3,number3,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,REVIEW
+API_CALLLOG,SALESFORCE_ID,salesforce_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,REVIEW
+API_CALLLOG,STATE,state,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_CALLLOG,STREET,street,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALLLOG,ZIP,zip,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALLLOG,AGENT.FULL_NAME,agent_dot_full_name,VARCHAR(16777216),VARCHAR(256),MEDIUM,name or free text; masking decision pending,REVIEW
+API_CALLLOG,CALL CENTER EVENTS.TRAINING,call_center_events_dot_training,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,CALL CENTER EVENTS.UNFORESEEN CLOSURE,call_center_events_dot_unforeseen_closure,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,STUDIO.ABANDONED,studio_dot_abandoned,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,STUDIO.RETURN_DATA_STORE,studio_dot_return_data_store,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,STUDIO.ROUTE_REASON,studio_dot_route_reason,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,STUDIO.ROUTE_TYPE,studio_dot_route_type,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,STUDIO.ROUTE_VALUE,studio_dot_route_value,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,STUDIO.TASK_POP,studio_dot_task_pop,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,STUDIO.TASK_REGION,studio_dot_task_region,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,STUDIO.TASK_UUID,studio_dot_task_uuid,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALLLOG,STUDIO.TRANSFER_DISPOSITION,studio_dot_transfer_disposition,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,SURVEY.ECC VOICE MESSAGE,survey_dot_ecc_voice_message,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,SURVEY.LANGUAGE,survey_dot_language,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,WORKSHEET ID,worksheet_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALLLOG,FILE_NAME,five9_file_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,LOAD_TIMESTAMP,five9_load_timestamp,VARCHAR(16777216),TIMESTAMP_NTZ(0),HIGH,Five9 load timestamp text,N
+API_CALLLOG,QUEUE CALLBACK PROCESSING,queue_callback_processing,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALLLOG,STUDIO.DURATION,studio_dot_duration,VARCHAR(16777216),"NUMBER(12,0)",MEDIUM,duration in seconds (text),N
+API_CALLLOG,NO PARTY CONTACT,no_party_contact,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALLLOG,SIP RESPONSE CODE,sip_response_code,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,VOICEMAILS TRANSFERRED,voicemails_transferred,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,SPEED OF ANSWER,speed_of_answer,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,TIME,time,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_CALLLOG,DIAL TIME,dial_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,DNIS COUNTRY CODE,dnis_country_code,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,TALK TIME LESS HOLD AND PARK,talk_time_less_hold_and_park,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,ABANDONED,abandoned,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALLLOG,STUDIO.TASK_ID,studio_dot_task_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALLLOG,RECORD COUNTER,record_counter,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,AGENT ID,agent_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALLLOG,DNIS AREA CODE,dnis_area_code,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,CALLS,calls,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,PARK TIME,park_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,CONSULT TIME,consult_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,HANDLE TIME,handle_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,RATE,rate,VARCHAR(16777216),"NUMBER(12,4)",LOW,currency or rate unit not known,N
+API_CALLLOG,SURVEY.BENEFITS,survey_dot_benefits,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,TOTAL QUEUE TIME,total_queue_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,SURVEY.ECC SURVEY QUESTION 3,survey_dot_ecc_survey_question_3,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,SURVEY.ECC SURVEY QUESTION 2,survey_dot_ecc_survey_question_2,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,MANUAL TIME,manual_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,VOICEMAILS HANDLE TIME,voicemails_handle_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,SURVEY.EEC SURVEY QUESTION 4,survey_dot_eec_survey_question_4,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,AGENT.ID,agent_dot_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALLLOG,CALLS TIMED OUT IN IVR,calls_timed_out_in_ivr,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,CONTACT ID,contact_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALLLOG,CONTACTED,contacted,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALLLOG,SERVICE LEVEL,service_level,VARCHAR(16777216),"NUMBER(6,1)",MEDIUM,percent (ACD) or 0/1 per call,N
+API_CALLLOG,TIME TO ABANDON,time_to_abandon,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,RING TIME,ring_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,AFTER CALL WORK TIME,after_call_work_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,VOICEMAILS DECLINED,voicemails_declined,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,VOICEMAILS RETURNED CALL,voicemails_returned_call,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,HOUR OF DAY,hour_of_day,VARCHAR(16777216),"NUMBER(2,0)",HIGH,calendar or time-of-day label (text in export),N
+API_CALLLOG,HOLD TIME,hold_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,QUEUE WAIT TIME,queue_wait_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,HOLDS,holds,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,QUEUE CALLBACK WAIT TIME,queue_callback_wait_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,CONTACTCREATEDATETIME,contactcreatedatetime,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; format and UTC assumed from samples,N
+API_CALLLOG,HALF HOUR,half_hour,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_CALLLOG,SURVEY.ECC SURVEY QUESTION 1,survey_dot_ecc_survey_question_1,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,TALK TIME,talk_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,DISCONNECTED FROM HOLD,disconnected_from_hold,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALLLOG,YEAR,year,VARCHAR(16777216),"NUMBER(4,0)",HIGH,calendar or time-of-day label (text in export),N
+API_CALLLOG,COST,cost,VARCHAR(16777216),"NUMBER(12,4)",LOW,currency or rate unit not known,N
+API_CALLLOG,LIVE CONNECT,live_connect,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALLLOG,CONFERENCES,conferences,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,LASTDISPOSITIONDATETIME,lastdispositiondatetime,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; format and UTC assumed from samples,N
+API_CALLLOG,TIMESTAMP,timestamp,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; UTC assumed,N
+API_CALLLOG,IVR TIME,ivr_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,CALL CENTER EVENTS.QCB,call_center_events_dot_qcb,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,TIMESTAMP MILLISECOND,timestamp_millisecond,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; UTC assumed,N
+API_CALLLOG,HOUR,hour,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_CALLLOG,TRANSFERS,transfers,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,CALLS COMPLETED IN IVR,calls_completed_in_ivr,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,QUARTER HOUR,quarter_hour,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_CALLLOG,CONFERENCE TIME,conference_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,CONTACTMODIFIEDDATETIME,contactmodifieddatetime,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; format and UTC assumed from samples,N
+API_CALLLOG,DEST AGENT EXTENSION,dest_agent_extension,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,DAY OF MONTH,day_of_month,VARCHAR(16777216),"NUMBER(2,0)",HIGH,calendar or time-of-day label (text in export),N
+API_CALLLOG,BILL TIME (ROUNDED),bill_time_rounded,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,VOICEMAILS,voicemails,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,VOICEMAILS DELETED,voicemails_deleted,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,AGENT.STATION_ID,agent_dot_station_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,REVIEW
+API_CALLLOG,ANI COUNTRY CODE,ani_country_code,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,EXTENSION,extension,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,CALL ID,call_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALLLOG,3RD PARTY TALK TIME,3rd_party_talk_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALLLOG,ANI AREA CODE,ani_area_code,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_CALLLOG,STUDIO.TASK_ACCOUNT_ID,studio_dot_task_account_id,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,N
+API_CALLLOG,NUMBER1,number1,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,REVIEW
+API_CALLLOG,VOICEMAILS HANDLED,voicemails_handled,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALLLOG,CONTACT MODIFIED TIMESTAMP,contact_modified_timestamp,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; format and UTC assumed from samples,N
+API_CALLLOG,QUEUE CALLBACK REGISTERED,queue_callback_registered,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALLLOG,QUEUE CALLBACK REGISTERED_tmp,queue_callback_registered_tmp,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALLLOG,CONTACT CREATE TIMESTAMP,contact_create_timestamp,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; format and UTC assumed from samples,N
+API_CALLLOG,CALL TIME,call_time,VARCHAR(16777216),TIME(0),HIGH,time-of-day of the call (text in export),N
+API_CALLLOG,DNIS,dnis,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALLLOG,FIRST CALL RESOLUTION,first_call_resolution,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALLLOG,QUEUE OVERFLOW,queue_overflow,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALLLOG,MEDIA TYPE,media_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,VISUAL IVR,visual_ivr,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALLLOG,VOICE IVR,voice_ivr,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALLLOG,CONSULTS,consults,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALLLOG,CONSULTS ANSWERED,consults_answered,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALLLOG,CALL ANALYSIS DURATION,call_analysis_duration,VARCHAR(16777216),"NUMBER(12,0)",MEDIUM,duration in seconds (text),N
+API_CALLLOG,CALL ANALYSIS END TIME,call_analysis_end_time,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,CALL ANALYSIS LEVEL,call_analysis_level,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,CALL ANALYSIS RESULT,call_analysis_result,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALLLOG,CALL ANALYSIS START TIME,call_analysis_start_time,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,DATE,date,VARCHAR(16777216),DATE,HIGH,calendar date (text in export; YYYY-MM-DD),N
+API_CALL_SEGMENTREPORTALL,DATE AND HOUR,date_and_hour,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_CALL_SEGMENTREPORTALL,DAY OF WEEK,day_of_week,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_CALL_SEGMENTREPORTALL,MONTH,month,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_CALL_SEGMENTREPORTALL,ANI,ani,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,Y
+API_CALL_SEGMENTREPORTALL,ANI COUNTRY,ani_country,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,ANI STATE,ani_state,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_CALL_SEGMENTREPORTALL,CALL SURVEY RESULT,call_survey_result,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,CALL TYPE,call_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,CAMPAIGN,campaign,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,CAMPAIGN TYPE,campaign_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,CUSTOMER NAME,customer_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALL_SEGMENTREPORTALL,DISPOSITION,disposition,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,DISPOSITION GROUP A,disposition_group_a,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,DISPOSITION GROUP B,disposition_group_b,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,DISPOSITION GROUP C,disposition_group_c,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,DISPOSITION PATH,disposition_path,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,DNIS COUNTRY,dnis_country,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,DNIS STATE,dnis_state,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,LIST NAME,list_name,VARCHAR(16777216),VARCHAR(512),MEDIUM,free text or identifier; values not confirmed,REVIEW
+API_CALL_SEGMENTREPORTALL,NOTES,notes,VARCHAR(16777216),VARCHAR(512),MEDIUM,free text or identifier; values not confirmed,REVIEW
+API_CALL_SEGMENTREPORTALL,RECORDINGS,recordings,VARCHAR(16777216),VARCHAR(512),MEDIUM,free text or identifier; values not confirmed,N
+API_CALL_SEGMENTREPORTALL,SESSION ID,session_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALL_SEGMENTREPORTALL,SKILL,skill,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,SOA MIN/THRESHOLD (SEC),soa_min_threshold_sec,VARCHAR(16777216),"NUMBER(6,0)",HIGH,threshold seconds,N
+API_CALL_SEGMENTREPORTALL,PARK TIME,park_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,PREVIEW TIME,preview_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,CALLED PARTY,called_party,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,REVIEW
+API_CALL_SEGMENTREPORTALL,CALLING PARTY,calling_party,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,REVIEW
+API_CALL_SEGMENTREPORTALL,RESULT,result,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,SEGMENT TYPE,segment_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,FILE_NAME,five9_file_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,LOAD_TIMESTAMP,five9_load_timestamp,VARCHAR(16777216),TIMESTAMP_NTZ(0),HIGH,Five9 load timestamp text,N
+API_CALL_SEGMENTREPORTALL,DISCONNECTED FROM HOLD,disconnected_from_hold,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALL_SEGMENTREPORTALL,AFTER CALL WORK TIME,after_call_work_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,CONTACT ID,contact_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALL_SEGMENTREPORTALL,YEAR,year,VARCHAR(16777216),"NUMBER(4,0)",HIGH,calendar or time-of-day label (text in export),N
+API_CALL_SEGMENTREPORTALL,ANI AREA CODE,ani_area_code,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_CALL_SEGMENTREPORTALL,RATE,rate,VARCHAR(16777216),"NUMBER(12,4)",LOW,currency or rate unit not known,N
+API_CALL_SEGMENTREPORTALL,CALL TIME,call_time,VARCHAR(16777216),TIME(0),HIGH,time-of-day of the call (text in export),N
+API_CALL_SEGMENTREPORTALL,SERVICE LEVEL,service_level,VARCHAR(16777216),"NUMBER(6,1)",MEDIUM,percent (ACD) or 0/1 per call,N
+API_CALL_SEGMENTREPORTALL,SEGMENT TIME,segment_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,RING TIME,ring_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,TIMESTAMP,timestamp,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; UTC assumed,N
+API_CALL_SEGMENTREPORTALL,TIMESTAMP MILLISECOND,timestamp_millisecond,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; UTC assumed,N
+API_CALL_SEGMENTREPORTALL,ANI COUNTRY CODE,ani_country_code,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,HANDLE TIME,handle_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,HOLD TIME,hold_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,IVR TIME,ivr_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,QUEUE WAIT TIME,queue_wait_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,QUARTER HOUR,quarter_hour,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_CALL_SEGMENTREPORTALL,SPEED OF ANSWER,speed_of_answer,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,3RD PARTY TALK TIME,3rd_party_talk_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,COST,cost,VARCHAR(16777216),"NUMBER(12,4)",LOW,currency or rate unit not known,N
+API_CALL_SEGMENTREPORTALL,HOLDS,holds,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALL_SEGMENTREPORTALL,ABANDONED,abandoned,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALL_SEGMENTREPORTALL,DNIS,dnis,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALL_SEGMENTREPORTALL,QUEUE CALLBACK WAIT TIME,queue_callback_wait_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,TOTAL QUEUE TIME,total_queue_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,CONTACTED,contacted,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_CALL_SEGMENTREPORTALL,HOUR OF DAY,hour_of_day,VARCHAR(16777216),"NUMBER(2,0)",HIGH,calendar or time-of-day label (text in export),N
+API_CALL_SEGMENTREPORTALL,CALL SEGMENT ID,call_segment_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALL_SEGMENTREPORTALL,CONFERENCE TIME,conference_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,HALF HOUR,half_hour,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_CALL_SEGMENTREPORTALL,DNIS COUNTRY CODE,dnis_country_code,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,CALLS COMPLETED IN IVR,calls_completed_in_ivr,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALL_SEGMENTREPORTALL,PARKS,parks,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALL_SEGMENTREPORTALL,CONFERENCES,conferences,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALL_SEGMENTREPORTALL,TIME,time,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_CALL_SEGMENTREPORTALL,CALL ID,call_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_CALL_SEGMENTREPORTALL,HOUR,hour,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_CALL_SEGMENTREPORTALL,TRANSFERS,transfers,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_CALL_SEGMENTREPORTALL,TALK TIME,talk_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,DAY OF MONTH,day_of_month,VARCHAR(16777216),"NUMBER(2,0)",HIGH,calendar or time-of-day label (text in export),N
+API_CALL_SEGMENTREPORTALL,DNIS AREA CODE,dnis_area_code,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,CONSULT TIME,consult_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_CALL_SEGMENTREPORTALL,TIME INTERVAL,time_interval,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_CALL_SEGMENTREPORTALL,FIRST CALL RESOLUTION,first_call_resolution,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALL_SEGMENTREPORTALL,QUEUE CALLBACK PROCESSING,queue_callback_processing,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALL_SEGMENTREPORTALL,QUEUE CALLBACK REGISTERED,queue_callback_registered,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALL_SEGMENTREPORTALL,QUEUE OVERFLOW,queue_overflow,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALL_SEGMENTREPORTALL,TIME TO ABANDON,time_to_abandon,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_CALL_SEGMENTREPORTALL,CALLS,calls,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_CALL_SEGMENTREPORTALL,MEDIA TYPE,media_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,VISUAL IVR,visual_ivr,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALL_SEGMENTREPORTALL,VOICE IVR,voice_ivr,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALL_SEGMENTREPORTALL,CONSULTS,consults,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALL_SEGMENTREPORTALL,CONSULTS ANSWERED,consults_answered,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_CALL_SEGMENTREPORTALL,TALK TIME LESS HOLD AND PARK,talk_time_less_hold_and_park,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_CALL_SEGMENTREPORTALL,VOICEMAILS,voicemails,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_CALL_SEGMENTREPORTALL,VOICEMAILS DECLINED,voicemails_declined,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_CALL_SEGMENTREPORTALL,VOICEMAILS DELETED,voicemails_deleted,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_CALL_SEGMENTREPORTALL,VOICEMAILS HANDLED,voicemails_handled,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_CALL_SEGMENTREPORTALL,VOICEMAILS RETURNED CALL,voicemails_returned_call,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_CALL_SEGMENTREPORTALL,VOICEMAILS TRANSFERRED,voicemails_transferred,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_CALL_SEGMENTREPORTALL,AGENT,agent,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,REVIEW
+API_CALL_SEGMENTREPORTALL,AGENT EMAIL,agent_email,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALL_SEGMENTREPORTALL,AGENT FIRST NAME,agent_first_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALL_SEGMENTREPORTALL,AGENT GROUP,agent_group,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_CALL_SEGMENTREPORTALL,AGENT LAST NAME,agent_last_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_CALL_SEGMENTREPORTALL,AGENT NAME,agent_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_CALL_SEGMENTREPORTALL,EXTENSION,extension,"NUMBER(3,0)",VARCHAR(32),MEDIUM,"numeric in workbook, but an extension is an identifier",N
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED DATE,received_date,VARCHAR(16777216),DATE,HIGH,calendar date (text in export; YYYY-MM-DD),N
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED DATE AND HOUR,received_date_and_hour,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED DAY OF WEEK,received_day_of_week,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED INTERVAL,received_interval,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED MONTH,received_month,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,COMMENT,comment,VARCHAR(16777216),VARCHAR(256),MEDIUM,free text; values not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,DELETING AGENT,deleting_agent,VARCHAR(16777216),VARCHAR(64),MEDIUM,agent or skill identifier; name vs id not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,NAME,name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_VOICEMAIL_LIFECYCLE_LOG,PROCESSING AGENT,processing_agent,VARCHAR(16777216),VARCHAR(64),MEDIUM,agent or skill identifier; name vs id not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,RETURNED SKILL,returned_skill,VARCHAR(16777216),VARCHAR(64),MEDIUM,agent or skill identifier; name vs id not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,RETURNING AGENT,returning_agent,VARCHAR(16777216),VARCHAR(64),MEDIUM,agent or skill identifier; name vs id not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,VOICEMAIL STATUS,voicemail_status,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,VOICEMAIL TYPE,voicemail_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,CITY,city,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_VOICEMAIL_LIFECYCLE_LOG,COMPANY,company,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_VOICEMAIL_LIFECYCLE_LOG,EMAIL,email,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_VOICEMAIL_LIFECYCLE_LOG,FIRST_NAME,first_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_VOICEMAIL_LIFECYCLE_LOG,LANGUAGE SELECT,language_select,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,LAST_NAME,last_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_VOICEMAIL_LIFECYCLE_LOG,LASTAGENT,lastagent,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,REVIEW
+API_VOICEMAIL_LIFECYCLE_LOG,LASTCAMPAIGN,lastcampaign,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,LASTDISPOSITION,lastdisposition,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,NUMBER2,number2,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,REVIEW
+API_VOICEMAIL_LIFECYCLE_LOG,NUMBER3,number3,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,REVIEW
+API_VOICEMAIL_LIFECYCLE_LOG,SALESFORCE_ID,salesforce_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,REVIEW
+API_VOICEMAIL_LIFECYCLE_LOG,STATE,state,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_VOICEMAIL_LIFECYCLE_LOG,STREET,street,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_VOICEMAIL_LIFECYCLE_LOG,ZIP,zip,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_VOICEMAIL_LIFECYCLE_LOG,FILE_NAME,five9_file_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,LOAD_TIMESTAMP,five9_load_timestamp,VARCHAR(16777216),TIMESTAMP_NTZ(0),HIGH,Five9 load timestamp text,N
+API_VOICEMAIL_LIFECYCLE_LOG,TIME TO PROCESSED,time_to_processed,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_VOICEMAIL_LIFECYCLE_LOG,ACCEPTED,accepted,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_VOICEMAIL_LIFECYCLE_LOG,PROCESSED,processed,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_VOICEMAIL_LIFECYCLE_LOG,PROCESSED TIMESTAMP,processed_timestamp,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; format and UTC assumed from samples,N
+API_VOICEMAIL_LIFECYCLE_LOG,LASTDISPOSITIONDATETIME,lastdispositiondatetime,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; format and UTC assumed from samples,N
+API_VOICEMAIL_LIFECYCLE_LOG,CALL ID,call_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED DAY OF MONTH,received_day_of_month,VARCHAR(16777216),"NUMBER(2,0)",HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,DELETED,deleted,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED QUARTER HOUR,received_quarter_hour,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,LISTENED,listened,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_VOICEMAIL_LIFECYCLE_LOG,COUNTER,counter,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_VOICEMAIL_LIFECYCLE_LOG,CONTACTMODIFIEDDATETIME,contactmodifieddatetime,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; format and UTC assumed from samples,N
+API_VOICEMAIL_LIFECYCLE_LOG,QUEUED,queued,VARCHAR(16777216),"NUMBER(1,0)",MEDIUM,0/1 flag stored as text,N
+API_VOICEMAIL_LIFECYCLE_LOG,NUMBER1,number1,VARCHAR(16777216),VARCHAR(256),LOW,vendor feature field; meaning and values not documented in workbook,REVIEW
+API_VOICEMAIL_LIFECYCLE_LOG,ANI,ani,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,Y
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED TIMESTAMP,received_timestamp,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; format and UTC assumed from samples,N
+API_VOICEMAIL_LIFECYCLE_LOG,RETURNED CALL ID,returned_call_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED TIMESTAMP MILLISECOND,received_timestamp_millisecond,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; format and UTC assumed from samples,N
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED YEAR,received_year,VARCHAR(16777216),"NUMBER(4,0)",HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED HOUR,received_hour,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,CONTACTCREATEDATETIME,contactcreatedatetime,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; format and UTC assumed from samples,N
+API_VOICEMAIL_LIFECYCLE_LOG,TIME TO RETURN,time_to_return,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_VOICEMAIL_LIFECYCLE_LOG,RETURNED TIMESTAMP,returned_timestamp,VARCHAR(16777216),TIMESTAMP_NTZ(0),MEDIUM,timestamp stored as text; format and UTC assumed from samples,N
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED TIME,received_time,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,VOICEMAIL ID,voicemail_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED HALF HOUR,received_half_hour,VARCHAR(16777216),TIME(0),HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,CONTACT ID,contact_id,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,N
+API_VOICEMAIL_LIFECYCLE_LOG,RECEIVED HOUR OF DAY,received_hour_of_day,VARCHAR(16777216),"NUMBER(2,0)",HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,DATE,date,VARCHAR(16777216),DATE,HIGH,calendar date (text in export; YYYY-MM-DD),N
+API_VOICEMAIL_LIFECYCLE_LOG,DATE AND HOUR,date_and_hour,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,DAY OF MONTH,day_of_month,"NUMBER(2,0)","NUMBER(2,0)",HIGH,calendar part,N
+API_VOICEMAIL_LIFECYCLE_LOG,DAY OF WEEK,day_of_week,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,HALF HOUR,half_hour,TIME(9),TIME(0),HIGH,time-of-day label,N
+API_VOICEMAIL_LIFECYCLE_LOG,HOUR,hour,TIME(9),TIME(0),HIGH,time-of-day label,N
+API_VOICEMAIL_LIFECYCLE_LOG,HOUR OF DAY,hour_of_day,"NUMBER(2,0)","NUMBER(2,0)",HIGH,calendar part,N
+API_VOICEMAIL_LIFECYCLE_LOG,MONTH,month,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,QUARTER HOUR,quarter_hour,TIME(9),TIME(0),HIGH,time-of-day label,N
+API_VOICEMAIL_LIFECYCLE_LOG,TIME,time,TIME(9),TIME(0),HIGH,time-of-day label,N
+API_VOICEMAIL_LIFECYCLE_LOG,TIME INTERVAL,time_interval,VARCHAR(16777216),VARCHAR(64),HIGH,calendar or time-of-day label (text in export),N
+API_VOICEMAIL_LIFECYCLE_LOG,TIMESTAMP,timestamp,TIMESTAMP_NTZ(9),TIMESTAMP_NTZ(0),HIGH,timestamp (UTC assumed),N
+API_VOICEMAIL_LIFECYCLE_LOG,TIMESTAMP MILLISECOND,timestamp_millisecond,TIMESTAMP_NTZ(9),TIMESTAMP_NTZ(0),HIGH,timestamp (UTC assumed),N
+API_VOICEMAIL_LIFECYCLE_LOG,YEAR,year,"NUMBER(4,0)","NUMBER(4,0)",HIGH,calendar part,N
+API_VOICEMAIL_LIFECYCLE_LOG,ABANDONED,abandoned,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_VOICEMAIL_LIFECYCLE_LOG,DISPOSITION,disposition,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,DISPOSITION GROUP A,disposition_group_a,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,DISPOSITION GROUP B,disposition_group_b,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,DISPOSITION GROUP C,disposition_group_c,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,DISPOSITION PATH,disposition_path,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,FIRST CALL RESOLUTION,first_call_resolution,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_VOICEMAIL_LIFECYCLE_LOG,QUEUE CALLBACK PROCESSING,queue_callback_processing,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_VOICEMAIL_LIFECYCLE_LOG,QUEUE CALLBACK REGISTERED,queue_callback_registered,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_VOICEMAIL_LIFECYCLE_LOG,QUEUE CALLBACK WAIT TIME,queue_callback_wait_time,VARCHAR(16777216),"NUMBER(12,0)",HIGH,duration in seconds (text),N
+API_VOICEMAIL_LIFECYCLE_LOG,QUEUE OVERFLOW,queue_overflow,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_VOICEMAIL_LIFECYCLE_LOG,QUEUE WAIT TIME,queue_wait_time,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,SERVICE LEVEL,service_level,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_VOICEMAIL_LIFECYCLE_LOG,SKILL,skill,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,SOA MIN/THRESHOLD (SEC),soa_min_threshold_sec,VARCHAR(16777216),"NUMBER(6,0)",HIGH,threshold seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,SPEED OF ANSWER,speed_of_answer,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,TIME TO ABANDON,time_to_abandon,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,TOTAL QUEUE TIME,total_queue_time,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,CALL SURVEY RESULT,call_survey_result,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,CALL TYPE,call_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,CALLS,calls,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,CAMPAIGN,campaign,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,CAMPAIGN TYPE,campaign_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,MEDIA TYPE,media_type,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,VISUAL IVR,visual_ivr,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_VOICEMAIL_LIFECYCLE_LOG,VOICE IVR,voice_ivr,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_VOICEMAIL_LIFECYCLE_LOG,AFTER CALL WORK TIME,after_call_work_time,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,CONFERENCE TIME,conference_time,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,CONFERENCES,conferences,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,CONSULT TIME,consult_time,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,CONSULTS,consults,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_VOICEMAIL_LIFECYCLE_LOG,CONSULTS ANSWERED,consults_answered,"NUMBER(1,0)","NUMBER(1,0)",HIGH,"0/1 flag (NUMBER(1,0) in workbook)",N
+API_VOICEMAIL_LIFECYCLE_LOG,HANDLE TIME,handle_time,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,HOLD TIME,hold_time,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,HOLDS,holds,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,IVR TIME,ivr_time,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,PARK TIME,park_time,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,PARKS,parks,VARCHAR(16777216),"NUMBER(10,0)",HIGH,count (text in workbook),N
+API_VOICEMAIL_LIFECYCLE_LOG,RING TIME,ring_time,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,TALK TIME,talk_time,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,TALK TIME LESS HOLD AND PARK,talk_time_less_hold_and_park,TIME(9),"NUMBER(12,0)",HIGH,duration (TIME(9)) parsed to seconds,N
+API_VOICEMAIL_LIFECYCLE_LOG,TRANSFERS,transfers,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,VOICEMAILS,voicemails,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,VOICEMAILS DECLINED,voicemails_declined,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,VOICEMAILS DELETED,voicemails_deleted,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,VOICEMAILS HANDLED,voicemails_handled,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,VOICEMAILS RETURNED CALL,voicemails_returned_call,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,VOICEMAILS TRANSFERRED,voicemails_transferred,"NUMBER(1,0)","NUMBER(10,0)",MEDIUM,numeric count in workbook; meaning not confirmed,N
+API_VOICEMAIL_LIFECYCLE_LOG,AGENT,agent,VARCHAR(16777216),VARCHAR(64),HIGH,identifier,REVIEW
+API_VOICEMAIL_LIFECYCLE_LOG,AGENT EMAIL,agent_email,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_VOICEMAIL_LIFECYCLE_LOG,AGENT FIRST NAME,agent_first_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_VOICEMAIL_LIFECYCLE_LOG,AGENT GROUP,agent_group,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,N
+API_VOICEMAIL_LIFECYCLE_LOG,AGENT LAST NAME,agent_last_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,Y
+API_VOICEMAIL_LIFECYCLE_LOG,AGENT NAME,agent_name,VARCHAR(16777216),VARCHAR(256),HIGH,text dimension,REVIEW
+API_VOICEMAIL_LIFECYCLE_LOG,EXTENSION,extension,"NUMBER(3,0)",VARCHAR(32),MEDIUM,"numeric in workbook, but an extension is an identifier",N
