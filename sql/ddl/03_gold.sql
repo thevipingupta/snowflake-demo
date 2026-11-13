@@ -200,6 +200,7 @@ CREATE TABLE IF NOT EXISTS CC_DEMO.GOLD.fact_repeat_call (
     days_since_prior_call NUMBER(3,0) NOT NULL, -- 0 to 7
     skill_key NUMBER(38,0) NOT NULL,            -- FK dim_skill (repeat call skill)
     media_type_key NUMBER(38,0) NOT NULL,       -- FK dim_media_type
+    prior_disposition_key NUMBER(38,0),         -- FK dim_disposition for the EARLIER call (added for Q3)
     CONSTRAINT pk_fact_repeat_call PRIMARY KEY (repeat_contact_id)
 )
 CLUSTER BY (call_date_key);

@@ -117,7 +117,8 @@ BEGIN
            TO_NUMBER(TO_CHAR(prior.call_date_et, 'YYYYMMDD')) AS prior_call_date_key,
            DATEDIFF('day', prior.call_date_et, cur.call_date_et) AS days_since_prior_call,
            sk.skill_key                                     AS skill_key,
-           mt.media_type_key                                AS media_type_key
+           mt.media_type_key                                AS media_type_key,
+           pdd.disposition_key                              AS prior_disposition_key
       FROM CC_DEMO.SILVER.stg_call cur
       JOIN CC_DEMO.SILVER.stg_call prior
         ON prior.customer_key = cur.customer_key
@@ -126,6 +127,7 @@ BEGIN
        AND DATEDIFF('day', prior.call_date_et, cur.call_date_et) BETWEEN 0 AND 7
       JOIN CC_DEMO.GOLD.dim_skill sk ON sk.skill_name = cur.skill
       JOIN CC_DEMO.GOLD.dim_media_type mt ON mt.media_type = cur.channel
+      LEFT JOIN CC_DEMO.GOLD.dim_disposition pdd ON pdd.disposition_path = prior.disposition_path
      WHERE cur.call_date_et BETWEEN :v_from AND :v_to
        AND cur.customer_key IS NOT NULL
     QUALIFY ROW_NUMBER() OVER (PARTITION BY cur.contact_id ORDER BY prior.call_start_et DESC) = 1;

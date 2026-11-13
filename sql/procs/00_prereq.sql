@@ -98,3 +98,6 @@ CREATE STAGE IF NOT EXISTS CC_DEMO.BRONZE.src_stage;
 CREATE STAGE IF NOT EXISTS CC_DEMO.CONTROL.test_stage;
 CREATE FILE FORMAT IF NOT EXISTS CC_DEMO.CONTROL.ff_csv_planted
     TYPE = CSV FIELD_DELIMITER = ',' SKIP_HEADER = 1 FIELD_OPTIONALLY_ENCLOSED_BY = '"';
+
+-- Added for the analytics layer (Q3): disposition of the earlier call in each repeat pair.
+ALTER TABLE CC_DEMO.GOLD.fact_repeat_call ADD COLUMN IF NOT EXISTS prior_disposition_key NUMBER(38,0);
